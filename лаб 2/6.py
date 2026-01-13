@@ -1,6 +1,8 @@
+#Факториал с помощью рекурсии
+
 def recurs_fact(n):
-    f = 1
-    for n in range(1, n+1):
-        f *= n
-    return f
+    if n == 0:
+        return 1
+    else:
+        return n * recurs_fact(n-1)
 print(recurs_fact(int(input('Введите факториал: '))))

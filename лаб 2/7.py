@@ -1,3 +1,5 @@
+#Генератор обратного счета
+
 def cg(num):
     i = num
     print(num)

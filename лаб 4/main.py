@@ -1,14 +1,13 @@
-
-class Node:
+class node:
     def __init__(self, data):
         self.data = data
         self.next = None
-class LinkedList:
+class linklst:
     def __init__(self):
         self.head = None
 
     def append(self, data):
-        new_node = Node(data)
+        new_node = node(data)
         if not self.head:
             self.head = new_node
             return
@@ -37,28 +36,32 @@ class LinkedList:
             cur = cur.next
         print("0")
 
+#Создать линейный односвязный список из целых чисел.
+#Элементы списка вводятся с клавиатуры до тех пор, пока не будет введен 0.
 def create_link_lst():
-    lst = LinkedList()
+    lst = linklst()
     print("Введите элементы списка, 0 - конец списка")
     while True:
         try:
             num = int(input())
         except ValueError:
-            print("Целое число")
+            print("Ошибка: Введите целое число")
             continue
         if num == 0:
             break
         lst.append(num)
     return lst
 
+#Найти среднее арифметическое всех элементов списка.
 def find_aver(linked_list):
     values = linked_list.to_lst()
     if not values:
         return 0
     return sum(values) / len(values)
 
+#Удалить из списка все элементы, которые больше среднего арифметического.
 def remove_greater_than_average(linked_list, avg):
-    dummy = Node(0)
+    dummy = node(0)
     dummy.next = linked_list.head
     prev, cur = dummy, linked_list.head
 
@@ -70,17 +73,19 @@ def remove_greater_than_average(linked_list, avg):
         cur = cur.next
     linked_list.head = dummy.next
 
+#Вставить число 100 после каждого четного элемента списка
 def insrt_aft_even(linked_list):
     cur = linked_list.head
     while cur:
         if cur.data % 2 ==0:
-            new_node = Node(100)
+            new_node = node(100)
             new_node.next = cur.next
             cur.next = new_node
             cur = new_node.next
         else:
             cur = cur.next
 
+#Отсортировать список по убыванию
 def sort_desc(linked_list):
     values = linked_list.to_lst()
     values.sort(reverse=True)

@@ -1,5 +1,7 @@
-def time_greeting (a, b):
-    return f"Good {b}, {a}!"
+#Условные приветствия
 
-res = time_greeting(input('Введите имя: '), input('Введите время суток: '))
+def time_greeting (a, b):
+    return f"Good {a}, {b}!"
+
+res = time_greeting(input('Введите время суток: '), input('Введите имя: '))
 print(res)

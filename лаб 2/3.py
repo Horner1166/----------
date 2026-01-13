@@ -1,3 +1,5 @@
+#Калькулятор
+
 def simple_calculator(num1, num2 ,oper):
     result = None
     if oper == '+':
